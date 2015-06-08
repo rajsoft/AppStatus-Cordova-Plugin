@@ -8,10 +8,13 @@ import org.json.JSONObject;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import java.util.List;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 public class AppStatus extends CordovaPlugin
 {
@@ -31,13 +34,13 @@ public class AppStatus extends CordovaPlugin
 			this.appname = args.getString(0);
 			
 			//this.processLocation();
-			this.checkRunningApp(appname);
+			this.checkRunningApp(this.appname);
 			
 			return true;
 		}
 		else
 		{
-			callback.error("checkAppStatus." + action + " is not a supported function. Did you mean 'getLocation'?");
+			callback.error("checkAppStatus." + action + " is not a supported function. Did you mean 'checkAppStatus'?");
 			return false;
 		}
 	}
