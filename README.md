@@ -14,6 +14,9 @@ There is no guarantee that the plugin returns the running status true or false
 ## Supported Platforms
     - Android
     
+## Add this permission 
+<uses-permission android:name="android.permission.GET_TASKS" />
+
 ## Example of Use
 
 navigator.appstatus.getAppStatus("com.sec.android.app.camera", onLocSuccess, onLocError);
