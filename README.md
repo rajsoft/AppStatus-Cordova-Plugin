@@ -20,7 +20,7 @@ navigator.appstatus.getAppStatus("com.sec.android.app.camera", onLocSuccess, onL
 
 function onLocSuccess(location) {
        alert(location.status);
-    },
+    }
     
 function onLocError(error) {
         alert('App Error: ' + error);
