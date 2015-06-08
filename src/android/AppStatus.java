@@ -52,14 +52,17 @@ public class AppStatus extends CordovaPlugin
 		final   ActivityManager activityManager = (ActivityManager) cordova.getActivity().getSystemService(Context.ACTIVITY_SERVICE);
 		final List<RunningTaskInfo> recentTasks = activityManager.getRunningTasks(Integer.MAX_VALUE);
 		
+		JSONObject myloc = new JSONObject();
+
 	    for (int i = 0; i < recentTasks.size(); i++) 
 	    {	    	
 	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {
     		     //Toast.makeText(getApplicationContext(), "Camera App is running", Toast.LENGTH_LONG).show();
     			runningStatus=true;
+    			myloc.put("status", runningStatus);
 	    	}	    	
 	    }
 
-	    callback.success(runningStatus);
+	    callback.success(myloc);
 	}
 }
