@@ -15,7 +15,7 @@ There is no guarantee that the plugin returns the running status true or false
     - Android
     
 ## Add this permission 
-<uses-permission android:name="android.permission.GET_TASKS" />
+uses-permission android:name="android.permission.GET_TASKS"
 
 ## Example of Use
 
