@@ -31,10 +31,10 @@ public class AppStatus extends CordovaPlugin
 
 		if(action.equals("checkAppStatus"))
 		{
-			this.appname = args.getBoolean(0);
+			this.appname = args.getString(0);
 			
 			//this.processLocation();
-			this.checkRunningApp(appname)
+			this.checkRunningApp(appname);
 			
 			return true;
 		}
