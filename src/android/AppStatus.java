@@ -59,7 +59,13 @@ public class AppStatus extends CordovaPlugin
 	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {
     		     //Toast.makeText(getApplicationContext(), "Camera App is running", Toast.LENGTH_LONG).show();
     			runningStatus=true;
+    			
+    			try {
     			myloc.put("status", runningStatus);
+    			}
+    			catch (JSONException e) {
+					e.printStackTrace();
+				}
 	    	}	    	
 	    }
 
