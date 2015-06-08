@@ -25,9 +25,6 @@ public class AppStatus extends CordovaPlugin
 	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException 
 	{
 		callback = callbackContext;
-		if (locationManager == null) {
-			locationManager = (LocationManager) cordova.getActivity().getSystemService(Context.LOCATION_SERVICE);
-		}
 
 		if(action.equals("checkAppStatus"))
 		{
@@ -51,8 +48,7 @@ public class AppStatus extends CordovaPlugin
 		final List<RunningTaskInfo> recentTasks = activityManager.getRunningTasks(Integer.MAX_VALUE);
 		
 	    for (int i = 0; i < recentTasks.size(); i++) 
-	    {
-	    	
+	    {	    	
 	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {
     		     //Toast.makeText(getApplicationContext(), "Camera App is running", Toast.LENGTH_LONG).show();
     			runningStatus=true;
@@ -61,8 +57,4 @@ public class AppStatus extends CordovaPlugin
 
 	    callback.success(runningStatus);
 	}
-
-
-	
-
 }
