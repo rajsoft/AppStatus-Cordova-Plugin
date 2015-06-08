@@ -34,10 +34,7 @@ public class AppStatus extends CordovaPlugin
 		if(action.equals("checkAppStatus"))
 		{
 			this.appname = args.getString(0);
-			
-			//this.processLocation();
-			this.checkRunningApp(this.appname);
-			
+			this.checkRunningApp(this.appname);			
 			return true;
 		}
 		else
@@ -59,15 +56,15 @@ public class AppStatus extends CordovaPlugin
 	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {
     		     //Toast.makeText(getApplicationContext(), "Camera App is running", Toast.LENGTH_LONG).show();
     			runningStatus=true;
-    			
-    			try {
-    			myloc.put("status", runningStatus);
-    			}
-    			catch (JSONException e) {
-					e.printStackTrace();
-				}
 	    	}	    	
 	    }
+
+	    try {
+			myloc.put("status", runningStatus);
+		}
+		catch (JSONException e) {
+			e.printStackTrace();
+		}
 
 	    callback.success(myloc);
 	}
