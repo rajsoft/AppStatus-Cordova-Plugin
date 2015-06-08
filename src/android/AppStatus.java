@@ -21,8 +21,7 @@ import android.content.Intent;
 public class AppStatus extends CordovaPlugin
 {
 		
-	CallbackContext callback;
-	
+	CallbackContext callback;	
 	boolean runningStatus = false;
 	String appname="";
 
@@ -53,8 +52,7 @@ public class AppStatus extends CordovaPlugin
 
 	    for (int i = 0; i < recentTasks.size(); i++) 
 	    {	    	
-	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {
-    		     //Toast.makeText(getApplicationContext(), "Camera App is running", Toast.LENGTH_LONG).show();
+	    	if(recentTasks.get(i).baseActivity.getPackageName().equals(appname)) {    		     
     			runningStatus=true;
 	    	}	    	
 	    }
