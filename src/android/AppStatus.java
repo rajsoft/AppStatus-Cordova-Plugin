@@ -15,6 +15,8 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+import android.content.Context;
+import android.content.Intent;
 
 public class AppStatus extends CordovaPlugin
 {
@@ -47,7 +49,7 @@ public class AppStatus extends CordovaPlugin
 
 	private void checkRunningApp(String appname)
 	{
-		final   ActivityManager activityManager = (ActivityManager) cordova.getActivity().getSystemService(ACTIVITY_SERVICE);
+		final   ActivityManager activityManager = (ActivityManager) cordova.getActivity().getSystemService(cordova.ACTIVITY_SERVICE);
 		final List<RunningTaskInfo> recentTasks = activityManager.getRunningTasks(Integer.MAX_VALUE);
 		
 	    for (int i = 0; i < recentTasks.size(); i++) 
